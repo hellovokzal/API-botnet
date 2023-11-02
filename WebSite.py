@@ -37,6 +37,9 @@ def stop():
 def update():
 	with open("ddos.txt", "r") as file5:
 	        return str(file5.read())
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
