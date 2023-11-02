@@ -23,11 +23,11 @@ def status():
 
 @app.route("/stop")
 def stop():
+    return "Атака завершена!"
     with open("status.txt", "w") as file3:
         file3.write("Stopped!")
     with open("ddos.txt", "w") as file4:
     	file4.write("")
-        return "Атака завершена!"
 
 @app.route("/update")
 
