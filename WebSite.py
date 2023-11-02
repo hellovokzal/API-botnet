@@ -31,9 +31,6 @@ def stop():
 def update():
 	with open("ddos.txt", "r") as file5:
 		text = file5.read()
-		
-	        return "Not Found"
-		
 	        return text
 
 if __name__ == '__main__':
