@@ -31,10 +31,10 @@ def stop():
 def update():
 	with open("ddos.txt", "r") as file5:
 		text = file5.read()
-		if file5.read() == "":
-			return "Not Found"
-		else:
-			return text
+		
+	        return "Not Found"
+		
+	        return text
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
